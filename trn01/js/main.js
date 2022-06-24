@@ -122,7 +122,37 @@ $(function () {
 
     });
 
+    $('#fl').on('change', function () {
+        var lik = $(this).val();
 
+        //if (lik) {
+        //    window.open(lik)
+        //}
+
+        lik && window.open(lik)
+
+        //ㅋㅡㄴㅇㅣㄹㄴㅏㅆㄴㅔ
+
+    });
+
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 1000)
+    });
+
+    $(window).on('scroll', function () {
+        var sct = $(window).scrollTop();
+
+        //if (sct > 800) {
+        //    $('.to_top').fadeIn()
+        //} else {
+        //    $('.to_top').fadeOut(1000)
+        //}
+
+        sct > 800
+            ? $('.to_top').fadeIn()
+            : $('.to_top').fadeOut(1000)
+        //ㅅㅏㅁㅎㅏㅇㅇㅕㄴㅅㅏㄴㅈㅏ
+    });
 
 
 
