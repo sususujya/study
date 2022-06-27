@@ -80,6 +80,14 @@ $(function () {
         autoplay: true,
         dots: true,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     });
 
     $('.product_arrows i:nth-child(1)').on('click', function () {
@@ -131,8 +139,6 @@ $(function () {
 
         lik && window.open(lik)
 
-        //ㅋㅡㄴㅇㅣㄹㄴㅏㅆㄴㅔ
-
     });
 
     $('.to_top').on('click', function () {
@@ -151,10 +157,28 @@ $(function () {
         sct > 800
             ? $('.to_top').fadeIn()
             : $('.to_top').fadeOut(1000)
-        //ㅅㅏㅁㅎㅏㅇㅇㅕㄴㅅㅏㄴㅈㅏ
+        //삼항연산자
     });
 
+    $('.mopen').on('click', function () {
+        $(this).toggleClass('on');
+        $('nav').toggleClass('on');
+    });
 
+    $('.header nav>ul>li>a').on('click', function () {
+        var idx = $(this).parent().index();
+
+        if ($('nav').hasClass('on') && idx < 3) {
+            event.preventDefault();
+            $(this).next().stop().slideToggle();
+            $(this).parent().siblings().find('ul').slideUp();
+        }
+    });
+
+    $(window).on('resize', function () {
+        $('nav').removeClass('on');
+        $('.header nav>ul ul').removeAttr('style');
+    });
 
 
 
