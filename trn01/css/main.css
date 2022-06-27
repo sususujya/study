@@ -1648,3 +1648,18 @@
     cursor: pointer;
     display: none;
 }
+
+@media (max-width: 768px) {
+    .to_top {
+        position: fixed;
+        inset: auto 15px 0 auto;
+        font-size: 40px;
+        color: #fff;
+        background: #333;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+    }
+}
