@@ -9,6 +9,10 @@
 </head>
 
 <style>
+    ul li.on {
+        color: lavender;
+    }
+
     .tab_content div {
         display: none;
     }
@@ -21,7 +25,7 @@
 <body>
     <div id="name">
         <ul>
-            <li>menu01</li>
+            <li><span>menu01</span></li>
             <li>menu02</li>
             <li>menu03</li>
             <li>menu04</li>
@@ -50,7 +54,11 @@
                 TAB.forEach(el => el.classList.remove('on'));
                 TAB[idx].classList.add('on')
             })
+            el.addEventListener('click', (e) => {
+                console.log(e.target, e.currentTarget)
+            })
         })
+
 
 
     </script>
