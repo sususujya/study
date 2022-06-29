@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 자료형01</title>
+</head>
+
+<body>
+    <div id="name">잼민이</div>
+    <script>
+        const NAME = document.querySelector('#name').innerText;
+        let NUM = 100;
+        const BL = true;
+        const FUN = function () {
+            return '잼민쓰'
+        };
+        const MYOBJECT = {
+            name: '재민이',
+            age: 99,
+        }
+        const MYARRAY = ['사과', '수박', '딸기', '포도', 28]
+        console.log(FUN, MYOBJECT, MYOBJECT.name, MYOBJECT.age, MYOBJECT['age'], MYARRAY);
+        console.log(NAME, this);
+        console.log(
+            typeof (NAME),
+            typeof (NUM),
+            typeof (BL),
+            null,
+            undefined,
+            (0 == "0"),
+            (0 === "0"),
+            (null == true),
+            (null == false),
+            (0 == true),
+        );
+        // ^^어떤 타입인지 알 수 있는 typeof
+    </script>
+</body>
+
+</html>

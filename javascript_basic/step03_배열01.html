@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 배열01</title>
+</head>
+
+<style>
+    .tab_content div {
+        display: none;
+    }
+
+    .tab_content div.on {
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="name">
+        <ul>
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+            <li>menu04</li>
+            <li>menu05</li>
+        </ul>
+        <div class="tab_content">
+            <div class="on">content01</div>
+            <div>content02</div>
+            <div>content03</div>
+            <div>content04</div>
+            <div>content05</div>
+        </div>
+    </div>
+    <script>
+        const Ul = document.querySelector('#name ul');
+        const Li = document.querySelectorAll('#name li');
+        const ULC = [...Ul.children]
+        const TAB = document.querySelectorAll('.tab_content>div');
+        console.log(Li, Ul.children, ULC, TAB);
+        Li.forEach(function (el, idx) {
+            el.addEventListener('click', function () {
+                Li.forEach(el => el.classList.remove('on'));
+                this.classList.add('on');
+                // el.classList.add('on')
+                console.log(idx);
+                TAB.forEach(el => el.classList.remove('on'));
+                TAB[idx].classList.add('on')
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
