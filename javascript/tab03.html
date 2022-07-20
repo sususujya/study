@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab03</title>
+
+    <style>
+        .tabContent>div {
+            display: none;
+        }
+
+        .tabContent>div.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab">
+        <ul class="tabMenu">
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+        </ul>
+        <div class="tabContent">
+            <div class="on">content01</div>
+            <div>content02</div>
+            <div>content03</div>
+        </div>
+    </div>
+
+    <script>
+
+        const TUL = document.querySelector('.tabMenu');
+        const TC = document.querySelector('.tabContent');
+
+        console.log(TUL);
+
+        const LI = [...TUL.children];
+        const TCD = [...TC.children];
+        // ^^^ 이렇게 함으로써 배열이 되었다
+
+
+        console.log(LI);
+
+        TUL.addEventListener('click', e => {
+            // console.log(e.target)
+            let idx = LI.indexOf(e.target);
+            console.log(e);
+
+            // 비구조할당
+            const { target } = e;
+            console.log(target);
+
+            LI.map(el => el.classList.remove('on'));
+            // LI[idx].classList.add('on'); 밑에꺼랑 같은 뜻이다
+            target.classList.add('on');
+
+            TCD.map(el => el.classList.remove('on'));
+            TCD[idx].classList.add('on');
+
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>
