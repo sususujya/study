@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>map</title>
+    <title>filter</title>
 </head>
 
 <body>
@@ -22,14 +22,14 @@
             { id: 5, content: "멋 져 너" }
         ];
 
-        // const newDATA = DATA.map(el => '<li>' + el.content + '</li>');
-        const newDATA = DATA.map(el => '<li>' + el.content + '</li>').join('');
-        // ^^join을 붙이면 문자열을 합쳐준다. 그래서 ','<<< 이게 없어진다
-        console.log(newDATA)
-        // ^^배열이 들어왔다
+        const newDATA = DATA.filter(el => el.id !== 4);
+        console.log(newDATA);
+        const RESULT = newDATA.map(el => '<li>' + el.content + '</li>').join('');
+        console.log(RESULT);
 
         const UL = document.querySelector('#UL');
-        UL.innerHTML = newDATA;
+        UL.innerHTML = RESULT
+
 
     </script>
 </body>

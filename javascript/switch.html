@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+
+    <style>
+        h1.on {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="H1">반짝이는 TEXT</h1>
+    <script>
+        let 참거짓 = true;
+        const H = document.querySelector('#H1');
+
+        setInterval(() => {
+            if (참거짓) {
+                H.classList.add('on');
+            } else {
+                H.classList.remove('on');
+            }
+            참거짓 = !참거짓;
+            // ^^^setInterval마다 참거짓을 반복한다
+        }, 1000)
+        // ^^^ 반복하는 함수
+    </script>
+</body>
+
+</html>
