@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 01 - tab</title>
+</head>
+
+<body>
+
+    <h1 id="h1"><span>여기를 클릭하세요</span></h1>
+
+    <script>
+        // 1. 화살표 함수
+        // 함수 표현식으로만 써야한다
+
+        // function something() { }
+
+        //const something = function(){}; //함수표현식
+
+        // ===>>>>>> 이걸 짧게 축약한 것이 화살표 함수
+
+        //const something = (e) => {}
+        // ^^^^ 이것이 바로 화살표 함수
+        // 유일한 단점이 this를 쓸 수 없다
+        // () <<사이에 event가 들어갈 수 있다
+
+
+        // EX)
+        const 화살표함수 = (e) => {
+            // console.log(e);
+            console.log(this, e.target, e.currentTarget);
+            //e.target은 직접 누르는 span, 당사자
+            //e.currentTarget은 쭉쭉 내려가는거
+        }
+
+        document.getElementById('h1').addEventListener('click', 화살표함수);
+
+
+        // 2. 스프레드 연산자
+
+        const 동물 = {
+            leg: 4,
+            mouse: 1,
+        }
+
+        const 말 = {
+            ...동물,
+            sound: '뚜찌빠찌',
+
+        }
+
+        console.log(말.leg);
+
+        const 고앵쓰 = {
+            leg: 4,
+            mouse: 1,
+            sound: '미',
+
+        }
+        const 똥강아지쓰 = {
+            leg: 4,
+            mouse: 1,
+            sound: '왈',
+
+        }
+
+        // 보면 다리랑 입이 갯수가 다 똑같음 그래서 늘어놓는 스프레드 연산자 등장~~
+
+        const 배열 = ['하나', '둘', '셋'];
+        // 배열.push('넷')
+        const 복사한배열 = [...배열, '넷'];
+        const 복사한배열2 = 배열.concat(['다섯']);
+
+        console.log(배열);
+        console.log(복사한배열);
+        console.log(복사한배열2);
+
+        // 스프레드 연사자는 그냥 읽기만 한다
+
+
+        // 3. 비구조할당...
+
+        const 객체 = {
+            name: '객체',
+            age: 100,
+            color: '#f00'
+        }
+
+        const { age, color, name } = 객체;
+        // ^^^ 똑같은 이름(age, color, name)을 할당해서 다시 넣어준거임
+        // 이름이 다르면 안 된 다
+
+        console.log(객체.color);
+        console.log(객체['color']);
+        console.log(name);
+
+
+        // 4. 논리연산자를 이용한 if
+
+
+        let num = 1;
+        // let num = ' ' <<<이거 공간이 있는걸로 본다
+        num && console.log('있음');
+        //^^ 이게 바로 if num = true 이면 
+        num ? console.log('있어') : console.log('없어');
+        num || console.log('있음');
+
+        let numm = '';
+        numm && console.log('있냐')
+        // 비어 있으니 아무것도 안 뜸
+
+
+        // 5. 삼항연산자
+
+        num ? console.log('있어') : console.log('없어');
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
