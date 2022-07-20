@@ -16,9 +16,11 @@
 
 <body>
     <h1 id="H1">반짝이는 TEXT</h1>
+    <button id="stop">STOP</button>
     <script>
         let 참거짓 = true;
         const H = document.querySelector('#H1');
+        const BTN = document.querySelector('#stop');
 
         setInterval(() => {
             if (참거짓) {
@@ -30,6 +32,21 @@
             // ^^^setInterval마다 참거짓을 반복한다
         }, 1000)
         // ^^^ 반복하는 함수
+
+
+        ////////////BTN 눌러서 멈추게 하는 것 start
+
+        const 반짝이 = setInterval(() => {
+            if (참거짓) {
+                H.classList.add('on');
+            } else {
+                H.classList.remove('on');
+            }
+            참거짓 = !참거짓;
+        }, 1000)
+        BTN.addEventListener('click', () => clearInterval(반짝이))
+
+        ///^^^^^^^^^ 이렇게 하면 버튼 눌러서 멈춰줄 수 있음
     </script>
 </body>
 
