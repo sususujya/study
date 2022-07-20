@@ -1,0 +1,23 @@
+터미널에 들어간 다음 git bash로 이동 후
+git init
+^^^ 깃을 사용하겠다는 선언
+echo "# react_503" >> README.md
+^^^ 이거는 깃허브에 리파지토리 만들면 나옴
+넣는다
+$ git add README.md
+^^^ 업데이트 하라는 명령
+
+git config --global user.email "_______@gmail.com"
+git config --global user.name "Master Kang"
+^^^ 이게 있어야함
+
+git commit -m "first commit"
+^^^ 이걸 땅 치면 저장됨
+git branch -M main
+^^^ 협업툴
+
+git remote add origin https://github.com/sususujya/react_503.git
+^^^ 깃과 연동
+
+git push -u origin main
+^^^ 분기게시 올린다는 뜻

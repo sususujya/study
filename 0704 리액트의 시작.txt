@@ -1,0 +1,26 @@
+리액트 시작 단계
+1 터미널에 들어간다
+2 npx create-react-app my-app
+^^^(my-app 부분은 내가 정하는 이름)
+
+We suggest that you begin by typing:
+  cd react_01
+  npm start
+
+happy hacking 뜨면 깔린거임
+
+cd 하면 안으로 들어가고
+cd .. 하면 나감
+
+
+*********
+react는 태그를 2개 이상 쓸 수 없어서 감싸줘야 한다
+<></> 이걸로
+
+변수를 선언한 뒤 {}여기 안에 넣어서 불러 온다
+
+*************
+
+빌드를 해야한다
+ctrl + c / y
+npm run build
